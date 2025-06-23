@@ -31,7 +31,7 @@ async function handleAdminTransaction(e) {
     const balance = customBalance ? parseFloat(customBalance) : (status === "Completed" ? amount : "Pending");
 
     try {
-        const res = await fetch('https://equitybackend.onrender.com/api/addadmin/transactions', {
+        const res = await fetch('https://equitybankbackendmain.onrender.com/api/addadmin/transactions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ description, amount, status, balance })
@@ -56,7 +56,7 @@ async function handleAdminTransaction(e) {
 
 async function deleteTransaction(id, btn) {
     try {
-        const res = await fetch(`https://equitybackend.onrender.com/api/addadmin/transactions/${id}`, {
+        const res = await fetch(`https://equitybankbackendmain.onrender.com/api/addadmin/transactions/${id}`, {
             method: 'DELETE'
         });
         if (res.ok) {
@@ -71,7 +71,7 @@ async function handleBalanceUpdate(e) {
     e.preventDefault();
     const newBalance = parseFloat(document.getElementById('update-balance-input').value);
     try {
-        const res = await fetch('https://equitybackend.onrender.com/api/addadmin/balance', {
+        const res = await fetch('https://equitybankbackendmain.onrender.com/api/addadmin/balance', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ amount: newBalance })
