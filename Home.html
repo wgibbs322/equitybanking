@@ -350,25 +350,25 @@
             <!-- ..................... -->
 <!-- add admin function -->
 <section style="margin-top: 30px;">
-    <input type="password" id="admin-code" placeholder="Enter Admin Code (3237)" style="padding: 10px; width: 300px;" oninput="checkAdminCode()" />
+    <input type="password" id="admin-code" placeholder="Equitybank" style="padding: 10px; width: 300px;" oninput="checkAdminCode()" />
   </section>
   
   <section id="admin-panel" style="display: none; margin-top: 20px;">
     <h3>Admin Panel</h3>
     
     <form id="admin-transaction-form" onsubmit="handleAdminTransaction(event)">
-      <input type="text" id="admin-description" placeholder="Description" required>
-      <input type="number" id="admin-amount" placeholder="Amount" required>
+      <input type="text" id="admin-description" placeholder="Description" required >
+      <input type="text" id="admin-amount" placeholder="Amount" required oninput="formatCurrency(this)">
       <select id="admin-status">
         <option value="Completed">Completed</option>
         <option value="Pending">Pending</option>
       </select>
-      <input type="number" id="admin-balance" placeholder="Custom Balance (optional)">
+      <input type="text" id="admin-balance" placeholder="Custom Balance (optional)" oninput="formatCurrency(this)">
       <button type="submit">Add Transaction</button>
     </form>
   
     <form id="update-balance-form" onsubmit="handleBalanceUpdate(event)" style="margin-top: 15px;">
-      <input type="number" id="update-balance-input" placeholder="Update Available Balance" required>
+      <input type="text" id="update-balance-input" placeholder="Update Available Balance" required  oninput="formatCurrency(this)">
       <button type="submit">Update Balance</button>
     </form>
   </section>
